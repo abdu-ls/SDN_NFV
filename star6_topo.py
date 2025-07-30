@@ -1,4 +1,7 @@
+from mininet.topo import Topo
 
+class starTopology(Topo):
+    def build(self):
 
 # Add switches
 switches = [self.addSwitch(f"s{i+1}") for i in range(6)]
@@ -14,3 +17,5 @@ for i, switch in enumerate(switches):
 for i in range(len(switches)):
     for j in range(i + 1, len(switches)):
         self.addLink(switches[i], switches[j])
+
+topo = {"custom": "starTopology}
